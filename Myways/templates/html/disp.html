@@ -1,0 +1,29 @@
+{% extends 'html/base.html' %}
+{% block title %} Home {% endblock %}{% load static %}
+{% block content %}
+<div class="container">
+ 
+<table class="table table-hover" border="1" style="width: 100%">
+<tr class="bg-dark text-white">
+	<th>source</th>
+	<th>destination</th>
+	<th>timings</th>
+	<th>Distance</th>
+	<th>number</th>
+	<th>cost</th>
+	</tr>
+	{%for i in dis%}
+	<tr>
+		<td>{{i.source}}</td>
+		<td>{{i.destination}}</td>
+		<td>{{i.timmings}}</td>
+        <td>{{i.distance}}</td>
+        <td>{{i.busid}}</td>
+        <td>{{i.cost}}</td>
+
+	</tr>
+	{%endfor%}
+	
+</table>
+</div>
+{% endblock %}

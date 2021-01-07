@@ -1,0 +1,11 @@
+{% extends 'html/base.html' %}
+{% block title %} Aboutus {% endblock %}
+{% block content %}
+<img src="{% static 'images/back.jpg' %}">
+
+            <input style="width: 30%"type="text" name="source" placeholder="Enter Source Location" class="form-control my-2">
+            <i class="fas fa-random" style="margin-left:180px"></i>
+            <input style=" width: 30%"type="text" name="destination" placeholder="Enter Destination Location" class="form-control my-2">
+			<input style="width: 30%" type="submit" value="search bus" class="btn btn-block btn-success mb-3 mt-1">
+{% endblock %}
+

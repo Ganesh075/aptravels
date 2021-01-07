@@ -1,0 +1,26 @@
+{% extends 'html/base.html' %}
+{% block title %} Bus searching {% endblock %}
+{% block content %}
+<div class="container">
+		<table class="table" border="1" style="width: 100%;">
+			<tr class="text-dark">
+				<td><b>S.no</b></td>
+				<td><b>Bus Number</b></td>
+				<td><b>Bus Image</b></td>
+				<td><b>Timmings</b></td>
+				<td><b>Bus Type</b></td>
+				<td><b>Actions</b></td>
+			</tr>
+			{% for resul in Data %}
+			<tr>
+				<td>{{forloop.counter}}</td>
+				<td>{{resul.busid}}</td>
+				<td><img src="{{resul.busim.url}}" height="50%" width="70%"></td>
+				<td>{{resul.timmings}}</td>
+				<td>{{resul.busclass}}</td>
+				<td><a href="{% url 'bookticket' resul.id %}" class="btn btn-primary">BookTicket</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>	
+{% endblock %}

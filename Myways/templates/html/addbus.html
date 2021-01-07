@@ -1,0 +1,25 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %}Login {% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<h2 class="p-3 bg-dark text-white text-center">Bus Registration</h2>
+				<table class="table  table-borderless">
+					{% for k in d %}
+					<tr>
+						<td>{{k}}</td>
+					</tr>
+					{% endfor %}
+					{% for m in fo %}
+					<tr>
+						<td>{{m.distance}}</td>
+					</tr>
+					<tr>
+						<td>{{m.cost}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			<input type="submit" name="Add Bus" class="btn btn-primary mb-2 rounded"><br>
+			</form>
+{% endblock %}
